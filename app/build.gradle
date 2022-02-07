@@ -60,6 +60,10 @@ dependencies {
     //see there was one more dependency with above line, if problem, use it
     implementation 'com.firebaseui:firebase-ui-auth:8.0.0'
 
+    // Declare the dependency for the Cloud Storage library
+    // When using the BoM, you don't specify versions in Firebase library dependencies
+    implementation 'com.google.firebase:firebase-storage'
+
     // Add the dependencies for any other desired Firebase products
     // https://firebase.google.com/docs/android/setup#available-libraries
 }
