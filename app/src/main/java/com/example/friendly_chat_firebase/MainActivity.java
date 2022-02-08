@@ -48,6 +48,7 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.remoteconfig.FirebaseRemoteConfig;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
@@ -80,6 +81,7 @@ public class MainActivity extends AppCompatActivity {
     private ChildEventListener messagesListener;
     private FirebaseStorage firebaseStorage;
     private StorageReference storageReference;
+    private FirebaseRemoteConfig firebaseRemoteConfig;
 
     private final int AUTH_REQUEST_CODE = 1;
 
@@ -92,6 +94,7 @@ public class MainActivity extends AppCompatActivity {
         firebaseDatabase = FirebaseDatabase.getInstance();
         firebaseAuth = FirebaseAuth.getInstance();
         firebaseStorage = FirebaseStorage.getInstance();
+        firebaseRemoteConfig = FirebaseRemoteConfig.getInstance();
 
         //.getReference gets me the reference to the root of DB, and then takes me to chile -- "messages"
         messages = firebaseDatabase.getReference().child("messages");
@@ -227,6 +230,12 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         };
+
+        //Enabling Dev MODE
+
+        //has been REMOVED so do from somewhere
+//        FirebaseRemoteConfigSettings configSettings = new FirebaseRemoteConfigSettings.Builder()
+//                .setDeveveloperModeEnabled
 
     }
 
